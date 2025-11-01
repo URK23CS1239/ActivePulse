@@ -24,10 +24,8 @@ const connectWithRetry = async () => {
     await mongoose.connect(mongoUri, {
       serverSelectionTimeoutMS: 5000,
       socketTimeoutMS: 45000,
-      ssl: true,
-      sslValidate: true,
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
+      tls: true,
+      tlsAllowInvalidCertificates: true,
     });
     console.log('✅ Connected to MongoDB');
   } catch (err) {
